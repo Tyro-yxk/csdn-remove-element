@@ -29,6 +29,9 @@
                 word-break: break-all;
                 margin-left: auto !important;
             }
+                .hljs-button{
+                margin-left: auto !important;
+                }
         `;
         document.head.appendChild(style);
         console.log('已添加覆盖样式');
@@ -36,10 +39,8 @@
 
     function safeRemoveElement(selector, retryDelay = 100, maxRetries = 10) {
         let retries = 0;
-        console.log("==============================================")
         function attemptRemove() {
             const elements = document.querySelectorAll(selector);
-            console.log("==============================================")
             if (elements) {
                 elements.forEach(element => {
                     element.remove();
@@ -58,6 +59,10 @@
     }
     safeRemoveElement('.btn-code-notes');
     safeRemoveElement('.code-run-btn');
-    overrideTargetStyle()
+    setTimeout(
+        overrideTargetStyle(),1000
+    );
+    
+    
 
 })();
