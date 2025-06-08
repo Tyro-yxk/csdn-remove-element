@@ -59,9 +59,7 @@
     }
     safeRemoveElement('.btn-code-notes');
     safeRemoveElement('.code-run-btn');
-    setTimeout(
-        overrideTargetStyle(),1000
-    );
+    overrideTargetStyle()
     
     
 
